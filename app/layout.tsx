@@ -1,15 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Bree_Serif, Quicksand } from "next/font/google";
 import "./globals.css";
+import Logo from "@/public/2minty-logo.svg";
+import Link from "next/link";
+import { Navbar } from "@/components/layout/navbar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const breeSerif = Bree_Serif({
+  weight: "400",
+  variable: "--font-bree-serif",
+  subsets: ["latin", "latin-ext"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const quicksand = Quicksand({
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-quicksand",
+  subsets: ["latin", "latin-ext"],
 });
 
 export const metadata: Metadata = {
@@ -25,9 +30,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${breeSerif.variable} ${quicksand.variable} font-quicksand antialiased`}
       >
-        {children}
+        <header>
+          <Navbar />
+        </header>
+
+        <main>{children}</main>
+
+        <footer></footer>
       </body>
     </html>
   );
