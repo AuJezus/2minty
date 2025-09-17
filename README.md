@@ -1,8 +1,8 @@
 Todo:
 
-- [ ] Setup vercel and other analytics
+- [x] Setup vercel and other analytics
 - [ ] Responsive design
-- [ ] SEO
+- [ ] SEO, favicon, link thumbnail
 - [ ] Animations
 - [ ] Instead of image link use static import and optimize images with srcset
 - [ ] Heading or typography component
