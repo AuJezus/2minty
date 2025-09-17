@@ -81,8 +81,8 @@ export function OnlineLessonsSection() {
                 <Image
                   src={step.illustration}
                   alt={step.title}
+                  className="object-cover"
                   fill
-                  objectFit="cover"
                 />
               </div>
             )}

@@ -58,8 +58,8 @@ export function ReviewsSection() {
                   <Image
                     src={review.authorImage}
                     alt={review.authorName}
+                    className="object-cover"
                     fill
-                    objectFit="cover"
                   />
                 </div>
 

@@ -24,8 +24,8 @@ export function IntroSection() {
         <Image
           src="/images/intro.png"
           alt="2minty"
+          className="object-cover"
           priority
-          objectFit="cover"
           fill
         />
       </div>
