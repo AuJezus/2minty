@@ -3,6 +3,7 @@ import { Bree_Serif, Quicksand } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { Analytics } from "@vercel/analytics/react";
 
 const breeSerif = Bree_Serif({
   weight: "400",
@@ -38,6 +39,8 @@ export default function RootLayout({
         <main>{children}</main>
 
         <Footer />
+
+        <Analytics />
       </body>
     </html>
   );

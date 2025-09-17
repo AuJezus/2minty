@@ -1,12 +1,17 @@
 import Link from "next/link";
 import Logo from "@/public/logo/2minty-logo.svg";
 import { navItems } from "@/config/config";
+import posthog from "posthog-js";
 
 export function Footer() {
   return (
     <footer className="bg-primary/65 text-primary-foreground px-20 py-20">
       <div className="mx-auto flex max-w-7xl flex-col items-center">
-        <Link href="/" className="mb-8">
+        <Link
+          href="/"
+          className="mb-8"
+          onClick={() => posthog.capture("footer_logo_clicked")}
+        >
           <Logo />
         </Link>
 
@@ -16,6 +21,12 @@ export function Footer() {
               <Link
                 href={item.href}
                 className="hover:text-primary-foreground/80 text-primary-foreground text-sm font-semibold transition-colors"
+                onClick={() =>
+                  posthog.capture("footer_nav_link_clicked", {
+                    href: item.href,
+                    label: item.label,
+                  })
+                }
               >
                 {item.label}
               </Link>

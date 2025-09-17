@@ -3,6 +3,7 @@ import { HomeSection } from "@/components/ui/home-section";
 import { registerFormUrl } from "@/config/config";
 import Image from "next/image";
 import Link from "next/link";
+import posthog from "posthog-js";
 
 export function CtaSection() {
   return (
@@ -21,7 +22,14 @@ export function CtaSection() {
           nemokama įžanga.
         </p>
 
-        <Button asChild>
+        <Button
+          asChild
+          onClick={() =>
+            posthog.capture("cta_register_button_clicked", {
+              destination_url: registerFormUrl,
+            })
+          }
+        >
           <Link href={registerFormUrl}>Registruotis</Link>
         </Button>
       </div>

@@ -3,6 +3,7 @@ import { HomeSection } from "@/components/ui/home-section";
 import { registerFormUrl } from "@/config/config";
 import Image from "next/image";
 import Link from "next/link";
+import posthog from "posthog-js";
 
 export function HeroSection() {
   return (
@@ -20,11 +21,29 @@ export function HeroSection() {
 
         <div className="flex gap-4">
           <Button asChild>
-            <Link href={registerFormUrl}>Registruotis</Link>
+            <Link
+              href={registerFormUrl}
+              onClick={() =>
+                posthog.capture("hero_register_button_clicked", {
+                  link_url: registerFormUrl,
+                })
+              }
+            >
+              Registruotis
+            </Link>
           </Button>
 
           <Button asChild variant="secondary">
-            <Link href="#contacts">Susisiekti</Link>
+            <Link
+              href="#contacts"
+              onClick={() =>
+                posthog.capture("hero_contact_button_clicked", {
+                  link_url: "#contacts",
+                })
+              }
+            >
+              Susisiekti
+            </Link>
           </Button>
         </div>
       </div>
