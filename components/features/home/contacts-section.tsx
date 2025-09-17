@@ -4,7 +4,6 @@ import { registerFormUrl } from "@/config/config";
 import { MailIcon, MapPinIcon, PhoneIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import posthog from "posthog-js";
 
 const contacts = [
   {
@@ -40,17 +39,8 @@ export function ContactsSection() {
             laiką pirmai nemokamai įžanginei pamokai.
           </p>
 
-          <Button asChild>
-            <Link
-              href={registerFormUrl}
-              onClick={() =>
-                posthog.capture("contact_section_register_clicked", {
-                  url: registerFormUrl,
-                })
-              }
-            >
-              Registruotis
-            </Link>
+          <Button pgName="contact_section_register" asChild>
+            <Link href={registerFormUrl}>Registruotis</Link>
           </Button>
         </div>
 
@@ -65,16 +55,7 @@ export function ContactsSection() {
                   <h4 className="font-bree mb-2 text-2xl">{contact.title}</h4>
 
                   {contact.link ? (
-                    <Link
-                      href={contact.link}
-                      className="underline"
-                      onClick={() =>
-                        posthog.capture("contact_link_clicked", {
-                          type: contact.title,
-                          link: contact.link,
-                        })
-                      }
-                    >
+                    <Link href={contact.link} className="underline">
                       {contact.text}
                     </Link>
                   ) : (

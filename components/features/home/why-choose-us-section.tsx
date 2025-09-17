@@ -2,7 +2,6 @@ import { HomeSection } from "@/components/ui/home-section";
 import { LinkChevron } from "@/components/ui/link-chevron";
 import { registerFormUrl } from "@/config/config";
 import { BirdIcon, GlobeIcon, PencilRulerIcon } from "lucide-react";
-import posthog from "posthog-js";
 
 const whyChooseUsCards = [
   {
@@ -51,15 +50,9 @@ export function WhyChooseUsSection() {
               <p className="mb-8 text-center text-base">{card.description}</p>
 
               <LinkChevron
+                pgName="why_choose_us_link"
                 href={card.linkHref}
                 className="self-center"
-                onClick={() =>
-                  posthog.capture("why_choose_us_link_clicked", {
-                    card_title: card.title,
-                    link_text: card.linkText,
-                    link_href: card.linkHref,
-                  })
-                }
               >
                 {card.linkText}
               </LinkChevron>
