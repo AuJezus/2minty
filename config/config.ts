@@ -7,4 +7,4 @@ export const navItems = [
 ];
 
 export const registerFormUrl =
-  "https://www.relume.io/app/project/P2378634_3g9WMXSF1ubObltSTac4OM_SToa5R4_mOwKC1sayCNE#mode=styleguide";
+  "https://docs.google.com/forms/d/e/1FAIpQLSfg8gsEvaeahI1LE2-Bd77KKPSjYFFcnSwDo6kXLVrpwp7iEg/viewform?usp=header";
