@@ -1,3 +1,4 @@
+import posthog from "posthog-js";
 import {
   Carousel,
   CarouselContent,
@@ -71,8 +72,20 @@ export function ReviewsSection() {
           ))}
         </CarouselContent>
 
-        <CarouselPrevious variant="ghost" />
-        <CarouselNext variant="ghost" />
+        <CarouselPrevious
+          variant="ghost"
+          onClick={() =>
+            posthog.capture("review_carousel_navigated", {
+              direction: "previous",
+            })
+          }
+        />
+        <CarouselNext
+          variant="ghost"
+          onClick={() =>
+            posthog.capture("review_carousel_navigated", { direction: "next" })
+          }
+        />
       </Carousel>
     </HomeSection>
   );
