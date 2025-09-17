@@ -1,4 +1,3 @@
-import posthog from "posthog-js";
 import { HomeSection } from "@/components/ui/home-section";
 import { LinkChevron } from "@/components/ui/link-chevron";
 import { registerFormUrl } from "@/config/config";
@@ -56,15 +55,13 @@ export function OnlineLessonsSection() {
               <p className="mb-6 text-base">{step.description}</p>
 
               {step.url && (
-                <div
-                  onClick={() =>
-                    posthog.capture("online_lesson_registration_cta_clicked", {
-                      destination_url: step.url,
-                      card_title: step.title,
-                    })
-                  }
-                >
-                  <LinkChevron href={step.url}>Registruotis</LinkChevron>
+                <div>
+                  <LinkChevron
+                    pgName="online_lesson_registration"
+                    href={step.url}
+                  >
+                    Registruotis
+                  </LinkChevron>
                 </div>
               )}
             </div>
