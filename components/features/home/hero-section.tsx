@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { HomeSection } from "@/components/ui/home-section";
+import { registerFormUrl } from "@/config/config";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -10,7 +11,7 @@ export function HeroSection() {
       innerClassName="flex items-center justify-between gap-20"
     >
       <div className="flex w-full flex-col gap-8">
-        <h1 className="font-bree text-7xl">Iš „neaišku" į „moku!" su 2minty</h1>
+        <h1 className="font-bree text-7xl">{`Iš „neaišku" į „moku!" su 2minty`}</h1>
 
         <p className="text-lg">
           Individualios Google Meet pamokos su jaunais korepetitoriais. Daug
@@ -19,13 +20,11 @@ export function HeroSection() {
 
         <div className="flex gap-4">
           <Button asChild>
-            <Link href="https://www.relume.io/app/project/P2378634_3g9WMXSF1ubObltSTac4OM_SToa5R4_mOwKC1sayCNE#mode=styleguide">
-              Registruotis
-            </Link>
+            <Link href={registerFormUrl}>Registruotis</Link>
           </Button>
 
           <Button asChild variant="secondary">
-            <Link href="#contact">Susisiekti</Link>
+            <Link href="#contacts">Susisiekti</Link>
           </Button>
         </div>
       </div>

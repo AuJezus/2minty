@@ -1,5 +1,6 @@
 import { HomeSection } from "@/components/ui/home-section";
 import { LinkChevron } from "@/components/ui/link-chevron";
+import { registerFormUrl } from "@/config/config";
 import { BirdIcon, GlobeIcon, PencilRulerIcon } from "lucide-react";
 
 const whyChooseUsCards = [
@@ -9,7 +10,7 @@ const whyChooseUsCards = [
     description:
       "Susipažįstame, įsivertiname lygį, sudėliojame tikslus ir mokymosi planą. Jei tinka - tęsiame.",
     linkText: "Registruotis",
-    linkHref: "/",
+    linkHref: registerFormUrl,
   },
   {
     icon: PencilRulerIcon,
@@ -17,7 +18,7 @@ const whyChooseUsCards = [
     description:
       "Jauni dar vis studijuojantis universitete korepetitoriai, kurie neseniai praėjo egzaminus. Kantrybė, paprasta kalba ir struktūra, kuri veikia.",
     linkText: "Sužinoti daugiau",
-    linkHref: "/",
+    linkHref: "#team",
   },
   {
     icon: GlobeIcon,
@@ -25,7 +26,7 @@ const whyChooseUsCards = [
     description:
       "Online per Google Meet, patogūs laikai ir aiški kaina - 20 € už pamoką. Galimi nuolaidų planai augant pamokų skaičiui.",
     linkText: "Kaip tai veikia?",
-    linkHref: "/",
+    linkHref: "#online-lessons",
   },
 ];
 
@@ -47,6 +48,7 @@ export function WhyChooseUsSection() {
                 {card.title}
               </h3>
               <p className="mb-8 text-center text-base">{card.description}</p>
+
               <LinkChevron href={card.linkHref} className="self-center">
                 {card.linkText}
               </LinkChevron>

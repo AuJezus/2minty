@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Bree_Serif, Quicksand } from "next/font/google";
 import "./globals.css";
-import Logo from "@/public/2minty-logo.svg";
-import Link from "next/link";
 import { Navbar } from "@/components/layout/navbar";
+import { Footer } from "@/components/layout/footer";
 
 const breeSerif = Bree_Serif({
   weight: "400",
@@ -28,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
         className={`${breeSerif.variable} ${quicksand.variable} font-quicksand antialiased`}
       >
@@ -38,7 +37,7 @@ export default function RootLayout({
 
         <main>{children}</main>
 
-        <footer></footer>
+        <Footer />
       </body>
     </html>
   );

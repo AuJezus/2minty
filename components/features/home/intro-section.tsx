@@ -16,6 +16,7 @@ const gradeLevels = [
 export function IntroSection() {
   return (
     <HomeSection
+      id="about"
       className="bg-primary/40 text-primary-foreground"
       innerClassName="flex items-center justify-between gap-20"
     >
@@ -36,9 +37,9 @@ export function IntroSection() {
           </h2>
 
           <p className="text-lg">
-            2minty pamokose deriname švelnų tempą su aiškia struktūra: trumpa
+            {`2minty pamokose deriname švelnų tempą su aiškia struktūra: trumpa
             teorija, pavyzdys, praktika ir grįžtamasis ryšys. Taip iš „neaišku"
-            pereiname į „moku!".
+            pereiname į „moku!".`}
           </p>
         </div>
 

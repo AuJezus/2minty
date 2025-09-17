@@ -1,5 +1,6 @@
 import { HomeSection } from "@/components/ui/home-section";
 import { LinkChevron } from "@/components/ui/link-chevron";
+import { registerFormUrl } from "@/config/config";
 import { ArrowBigRight, ArrowBigRightDash } from "lucide-react";
 import Image from "next/image";
 
@@ -9,7 +10,7 @@ const processSteps = [
     title: "Prisijunk ir išsirink laiką",
     description:
       "Užpildyk formą, suderinsime patogų grafiką ir gausi nuorodą į Google Meet. Pirmoji įžanginė - nemokama.",
-    url: "/",
+    url: registerFormUrl,
   },
   {
     icon: ArrowBigRight,

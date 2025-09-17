@@ -5,6 +5,8 @@ import {
   WhyChooseUsSection,
   TeamSection,
   ReviewsSection,
+  ContactsSection,
+  CtaSection,
 } from "@/components/features/home";
 
 export default function Home() {
@@ -16,6 +18,8 @@ export default function Home() {
       <TeamSection />
       <OnlineLessonsSection />
       <ReviewsSection />
+      <ContactsSection />
+      <CtaSection />
     </>
   );
 }

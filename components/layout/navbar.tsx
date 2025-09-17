@@ -1,13 +1,6 @@
 import Link from "next/link";
 import Logo from "@/public/logo/2minty-logo.svg";
-
-const navItems = [
-  { label: "Apie Mus", href: "#about" },
-  { label: "Komanda", href: "#team" },
-  { label: "Online Pamokos", href: "#lessons" },
-  { label: "Atsiliepimai", href: "#reviews" },
-  { label: "Kontaktai", href: "#contact" },
-];
+import { navItems } from "@/config/config";
 
 function Navbar() {
   return (
