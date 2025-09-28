@@ -13,7 +13,10 @@ export function LinkChevron({
   return (
     <Link
       {...props}
-      className={cn("flex items-center gap-2", props.className)}
+      className={cn(
+        "flex items-center gap-2 font-semibold md:font-medium",
+        props.className,
+      )}
       onClick={() => {
         if (pgName) {
           posthog.capture(`${pgName}_link_clicked`, {

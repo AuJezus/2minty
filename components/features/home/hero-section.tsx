@@ -3,20 +3,25 @@ import { HomeSection } from "@/components/ui/home-section";
 import { registerFormUrl } from "@/config/config";
 import Image from "next/image";
 import Link from "next/link";
+import { Typography } from "../../ui/typography";
 
 export function HeroSection() {
   return (
     <HomeSection
+      id="hero"
       className="bg-accent text-accent-foreground"
-      innerClassName="flex items-center justify-between gap-20"
+      innerClassName="flex items-center justify-between md:gap-20 gap-10 lg:flex-row flex-col"
     >
-      <div className="flex w-full flex-col gap-8">
-        <h1 className="font-bree text-7xl">{`Iš „neaišku" į „moku!" su 2minty`}</h1>
+      <div className="text flex w-full flex-col gap-6 sm:gap-6 md:gap-8">
+        <Typography
+          as="h1"
+          variant="h1"
+        >{`Iš „neaišku" į „moku!" su 2minty`}</Typography>
 
-        <p className="text-lg">
+        <Typography as="p" variant="lg">
           Individualios Google Meet pamokos su jaunais korepetitoriais. Daug
           dėmesio, aiškus planas ir realūs rezultatai.
-        </p>
+        </Typography>
 
         <div className="flex gap-4">
           <Button pgName="hero_register" asChild>
@@ -29,7 +34,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className="relative aspect-square w-full overflow-hidden rounded-2xl">
+      <div className="max relative aspect-square w-full overflow-hidden rounded-2xl">
         <Image
           src="/images/hero.png"
           alt="2minty"

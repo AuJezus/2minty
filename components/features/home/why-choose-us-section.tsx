@@ -2,6 +2,7 @@ import { HomeSection } from "@/components/ui/home-section";
 import { LinkChevron } from "@/components/ui/link-chevron";
 import { registerFormUrl } from "@/config/config";
 import { BirdIcon, GlobeIcon, PencilRulerIcon } from "lucide-react";
+import { Typography } from "../../ui/typography";
 
 const whyChooseUsCards = [
   {
@@ -33,26 +34,43 @@ const whyChooseUsCards = [
 export function WhyChooseUsSection() {
   return (
     <HomeSection className="bg-background text-foreground">
-      <h2 className="font-bree mx-auto mb-24 text-center text-[2.75rem] leading-[1.2] tracking-[-1%]">
+      <Typography
+        as="h2"
+        variant="h3"
+        className="mx-auto mb-16 text-center md:mb-24"
+      >
         Kodėl verta rinktis 2minty?
-      </h2>
+      </Typography>
 
-      <div className="flex items-start justify-between gap-8">
+      <div className="flex flex-wrap items-stretch justify-center gap-8 gap-y-12 lg:flex-nowrap lg:items-start lg:justify-between lg:gap-4 lg:gap-y-4 xl:gap-8">
         {whyChooseUsCards.map((card) => {
           const IconComponent = card.icon;
           return (
-            <div key={card.title} className="flex w-full flex-col">
-              <IconComponent className="mb-6 size-12 self-center" />
+            <div
+              key={card.title}
+              className="flex w-full max-w-[19.5rem] flex-col lg:max-w-full"
+            >
+              <IconComponent className="mb-4 size-12 self-center md:mb-6" />
 
-              <h3 className="font-bree mb-6 text-center text-3xl">
+              <Typography
+                as="h3"
+                variant="h4"
+                className="mb-4 text-center md:mb-6"
+              >
                 {card.title}
-              </h3>
-              <p className="mb-8 text-center text-base">{card.description}</p>
+              </Typography>
+              <Typography
+                as="p"
+                variant="base"
+                className="mb-4 text-center md:mb-8"
+              >
+                {card.description}
+              </Typography>
 
               <LinkChevron
                 pgName="why_choose_us_link"
                 href={card.linkHref}
-                className="self-center"
+                className="mt-auto self-center lg:mt-0"
               >
                 {card.linkText}
               </LinkChevron>

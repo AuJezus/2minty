@@ -1,5 +1,7 @@
 import { HomeSection } from "@/components/ui/home-section";
+import { DynamicDescription } from "@/components/ui/dynamic-description";
 import Image from "next/image";
+import { Typography } from "../../ui/typography";
 
 const teamMembers = [
   {
@@ -21,28 +23,34 @@ const teamMembers = [
 export function TeamSection() {
   return (
     <HomeSection id="team" className="bg-primary/40 text-primary-foreground">
-      <h2 className="font-base mb-4 font-semibold">Komanda</h2>
+      <Typography as="h2" variant="tagline" className="mb-4">
+        Komanda
+      </Typography>
 
-      <h3 className="font-bree mb-6 text-5xl">
+      <Typography as="h3" variant="h2" className="mb-6">
         Susipažinkite su 2minty korepetitoriais
-      </h3>
+      </Typography>
 
-      <p className="mb-20">
+      <Typography as="p" variant="base" className="mb-10 sm:mb-16 md:mb-20">
         Jauni, motyvuoti ir kantrūs - padedame suprasti matematiką ir pasitikėti
         savimi.
-      </p>
+      </Typography>
 
-      <div className="mb-6 flex items-start justify-between gap-8">
+      <div className="mb-6 flex flex-col items-start justify-between gap-10 sm:flex-row md:gap-8">
         {teamMembers.map((member) => (
           <div key={member.name} className="w-full">
             <div className="relative mb-4 aspect-square w-20 overflow-hidden rounded-full">
               <Image src={member.imageSrc} alt={member.name} fill />
             </div>
 
-            <h4 className="text-xl font-bold">{member.name}</h4>
-            <p className="mb-4 text-lg">{member.subheading}</p>
+            <Typography as="h4" variant="lg" className="font-bold">
+              {member.name}
+            </Typography>
+            <Typography as="p" variant="lg" className="mb-4">
+              {member.subheading}
+            </Typography>
 
-            <p className="text-base">{member.description}</p>
+            <DynamicDescription description={member.description} />
           </div>
         ))}
       </div>

@@ -4,6 +4,7 @@ import { registerFormUrl } from "@/config/config";
 import { MailIcon, MapPinIcon, PhoneIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { Typography } from "../../ui/typography";
 
 const contacts = [
   {
@@ -15,8 +16,8 @@ const contacts = [
   {
     icon: PhoneIcon,
     title: "Telefonas",
-    text: "+370 612 34 567",
-    link: "tel:+37061234567",
+    text: "+370 653 96700",
+    link: "tel:+37065396700",
   },
   {
     icon: MapPinIcon,
@@ -28,38 +29,46 @@ const contacts = [
 export function ContactsSection() {
   return (
     <HomeSection id="contacts" className="bg-background text-foreground">
-      <div className="mb-20 flex items-start justify-between gap-20">
-        <div className="w-2/3">
-          <h2 className="font-base mb-4 font-semibold">Kontaktai</h2>
+      <div className="mb-10 flex flex-col items-start justify-between gap-8 sm:mb-12 sm:flex-row sm:gap-10 md:mb-20 md:gap-20">
+        <div className="sm:w-2/3">
+          <Typography as="h2" variant="tagline" className="mb-4">
+            Kontaktai
+          </Typography>
 
-          <h3 className="font-bree mb-6 text-5xl">Susisiekime!</h3>
+          <Typography as="h3" variant="h2" className="mb-6">
+            Susisiekime!
+          </Typography>
 
-          <p className="mb-6 max-w-2xl text-lg">
+          <Typography as="p" variant="lg" className="mb-6 sm:max-w-2xl">
             Parašykite ar užpildykite formą - atsakysime ir suderinsime patogų
             laiką pirmai nemokamai įžanginei pamokai.
-          </p>
+          </Typography>
 
           <Button pgName="contact_section_register" asChild>
             <Link href={registerFormUrl}>Registruotis</Link>
           </Button>
         </div>
 
-        <div className="flex w-1/3 flex-col gap-6">
+        <div className="flex flex-col gap-6 sm:w-1/3">
           {contacts.map((contact) => {
             const IconComponent = contact.icon;
             return (
               <div key={contact.title} className="flex items-start gap-4">
-                <IconComponent className="size-6" />
+                <IconComponent className="size- flex-shrink-0" />
 
                 <div>
-                  <h4 className="font-bree mb-2 text-2xl">{contact.title}</h4>
+                  <Typography as="h4" variant="h5" className="mb-2">
+                    {contact.title}
+                  </Typography>
 
                   {contact.link ? (
                     <Link href={contact.link} className="underline">
                       {contact.text}
                     </Link>
                   ) : (
-                    <p>{contact.text}</p>
+                    <Typography as="p" variant="base">
+                      {contact.text}
+                    </Typography>
                   )}
                 </div>
               </div>

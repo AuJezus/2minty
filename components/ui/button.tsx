@@ -43,6 +43,7 @@ function Button({
   variant,
   size,
   asChild = false,
+  onClick,
   ...props
 }: React.ComponentProps<"button"> &
   VariantProps<typeof buttonVariants> & {
@@ -56,10 +57,11 @@ function Button({
       data-slot="button"
       className={cn(buttonVariants({ variant, size, className }))}
       {...props}
-      onClick={() => {
+      onClick={(e) => {
         if (pgName) {
           posthog.capture(`${pgName}_button_clicked`);
         }
+        onClick?.(e);
       }}
     />
   );

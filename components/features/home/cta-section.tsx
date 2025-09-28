@@ -3,23 +3,24 @@ import { HomeSection } from "@/components/ui/home-section";
 import { registerFormUrl } from "@/config/config";
 import Image from "next/image";
 import Link from "next/link";
+import { Typography } from "../../ui/typography";
 
 export function CtaSection() {
   return (
     <HomeSection
       id="cta"
       className="text-accent-foreground bg-[#B443B0]"
-      innerClassName="flex items-center justify-between gap-20"
+      innerClassName="flex md:flex-row flex-col items-center justify-between lg:gap-20 md:gap-16 sm:gap-12 gap-10"
     >
       <div className="w-full">
-        <h2 className="font-bree mb-6 text-5xl">
+        <Typography as="h2" variant="h2" className="mb-6">
           Pradėk savo mokymosi kelionę šiandien
-        </h2>
+        </Typography>
 
-        <p className="mb-8">
+        <Typography as="p" variant="lg" className="mb-8">
           Individualios Google Meet pamokos 5-12 klasei - aiškiai, jaukiai ir su
           nemokama įžanga.
-        </p>
+        </Typography>
 
         <Button pgName="cta_register" asChild>
           <Link href={registerFormUrl}>Registruotis</Link>
