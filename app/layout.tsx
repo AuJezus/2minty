@@ -27,8 +27,8 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
-      { url: "/icon0.svg", type: "image/svg+xml" },
-      { url: "/icon1.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/icon.png", sizes: "32x32", type: "image/png" },
     ],
     apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
   },
@@ -40,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="lg:scroll-smooth">
+    <html lang="lt" className="lg:scroll-smooth">
       <body
         className={`${breeSerif.variable} ${quicksand.variable} font-quicksand antialiased`}
       >
