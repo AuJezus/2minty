@@ -20,6 +20,18 @@ const quicksand = Quicksand({
 export const metadata: Metadata = {
   title: "2minty korepetitoriai",
   description: "2minty korepetitoriai",
+  appleWebApp: {
+    title: "2minty",
+  },
+  manifest: "/manifest.json",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon0.svg", type: "image/svg+xml" },
+      { url: "/icon1.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+  },
 };
 
 export default function RootLayout({
