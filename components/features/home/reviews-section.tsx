@@ -97,8 +97,8 @@ export function ReviewsSection() {
           ))}
         </CarouselContent>
 
-        <CarouselPrevious variant="ghost" className="hidden lg:block" />
-        <CarouselNext variant="ghost" className="hidden lg:block" />
+        <CarouselPrevious variant="ghost" className="hidden lg:flex" />
+        <CarouselNext variant="ghost" className="hidden lg:flex" />
       </Carousel>
     </HomeSection>
   );
