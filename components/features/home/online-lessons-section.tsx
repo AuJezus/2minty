@@ -12,6 +12,8 @@ const processSteps = [
     description:
       "Užpildyk formą, suderinsime patogų grafiką ir gausi nuorodą į Google Meet. Pirmoji įžanginė - nemokama.",
     url: registerFormUrl,
+    pgName: "online_lesson_registration",
+    target: "_blank",
   },
   {
     icon: ArrowBigRight,
@@ -66,8 +68,9 @@ export function OnlineLessonsSection() {
               {step.url && (
                 <div>
                   <LinkChevron
-                    pgName="online_lesson_registration"
+                    pgName={step.pgName}
                     href={step.url}
+                    target={step.target}
                   >
                     Registruotis
                   </LinkChevron>

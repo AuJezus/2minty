@@ -25,7 +25,9 @@ export function HeroSection() {
 
         <div className="flex gap-4">
           <Button pgName="hero_register" asChild>
-            <Link href={registerFormUrl}>Registruotis</Link>
+            <Link href={registerFormUrl} target="_blank">
+              Registruotis
+            </Link>
           </Button>
 
           <Button pgName="hero_contact" asChild variant="secondary">

@@ -60,7 +60,9 @@ function NavLinks({
         ))}
         <li>
           <Button pgName="nav_register" asChild>
-            <Link href={registerFormUrl}>Registruotis</Link>
+            <Link href={registerFormUrl} target="_blank">
+              Registruotis
+            </Link>
           </Button>
         </li>
       </ul>
@@ -80,7 +82,9 @@ function NavLinks({
       ))}
       <li>
         <Button pgName="nav_register" asChild>
-          <Link href={registerFormUrl}>Registruotis</Link>
+          <Link href={registerFormUrl} target="_blank">
+            Registruotis
+          </Link>
         </Button>
       </li>
     </ul>

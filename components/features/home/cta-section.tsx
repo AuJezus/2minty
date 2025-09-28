@@ -23,7 +23,9 @@ export function CtaSection() {
         </Typography>
 
         <Button pgName="cta_register" asChild>
-          <Link href={registerFormUrl}>Registruotis</Link>
+          <Link href={registerFormUrl} target="_blank">
+            Registruotis
+          </Link>
         </Button>
       </div>
 
