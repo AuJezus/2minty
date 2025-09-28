@@ -12,6 +12,8 @@ const whyChooseUsCards = [
       "Susipažįstame, įsivertiname lygį, sudėliojame tikslus ir mokymosi planą. Jei tinka - tęsiame.",
     linkText: "Registruotis",
     linkHref: registerFormUrl,
+    pgName: "why_choose_us_registration",
+    target: "_blank",
   },
   {
     icon: PencilRulerIcon,
@@ -68,8 +70,9 @@ export function WhyChooseUsSection() {
               </Typography>
 
               <LinkChevron
-                pgName="why_choose_us_link"
+                pgName={card.pgName}
                 href={card.linkHref}
+                target={card.target}
                 className="mt-auto self-center lg:mt-0"
               >
                 {card.linkText}

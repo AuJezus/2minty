@@ -45,7 +45,9 @@ export function ContactsSection() {
           </Typography>
 
           <Button pgName="contact_section_register" asChild>
-            <Link href={registerFormUrl}>Registruotis</Link>
+            <Link href={registerFormUrl} target="_blank">
+              Registruotis
+            </Link>
           </Button>
         </div>
 
@@ -62,7 +64,11 @@ export function ContactsSection() {
                   </Typography>
 
                   {contact.link ? (
-                    <Link href={contact.link} className="underline">
+                    <Link
+                      href={contact.link}
+                      target="_blank"
+                      className="underline"
+                    >
                       {contact.text}
                     </Link>
                   ) : (
