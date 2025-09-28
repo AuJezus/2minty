@@ -146,7 +146,7 @@ export function NavHeader() {
     <>
       <header
         className={cn(
-          "sticky top-0 left-0 z-20 h-[4.875rem] w-full transition-transform hover:translate-y-0",
+          "sticky top-0 left-0 z-20 hidden h-[4.875rem] w-full transition-transform hover:translate-y-0 lg:block",
           isScrollUp ? "translate-y-0" : "-translate-y-full",
         )}
       >
@@ -160,7 +160,7 @@ export function NavHeader() {
       </header>
 
       <div
-        className="bg-accent absolute top-0 left-0 z-10 h-[4.875rem] w-full"
+        className="bg-accent absolute top-0 left-0 z-10 w-full lg:h-[4.875rem]"
         aria-hidden="true"
       />
     </>
